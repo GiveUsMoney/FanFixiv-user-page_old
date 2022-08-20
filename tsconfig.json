@@ -22,5 +22,6 @@
   },
   "include": [
     "src"
-  ]
+  ],
+  "types": ["react/next", "react-dom/next"]
 }
