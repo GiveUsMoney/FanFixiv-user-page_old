@@ -20,6 +20,7 @@
     "lint": "eslint \"./src/**/*.{ts,tsx,js,jsx}\"",
     "lint:fix": "eslint --fix \"./src/**/*.{ts,tsx,js,jsx}\"",
     "eject": "react-scripts eject",
+    "build:gh": "set PUBLIC_URL=/FanFixiv-user-page && react-scripts build",
     "deploy:gh": "gh-pages -d build"
   },
   "eslintConfig": {
@@ -40,7 +41,6 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "http://giveusmoney.github.io/FanFixiv-user-page",
   "devDependencies": {
     "@types/jest": "^27.5.2",
     "@types/node": "^16.11.49",
