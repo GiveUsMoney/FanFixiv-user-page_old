@@ -46,5 +46,6 @@ module.exports = {
         aspects: ['invalidHref', 'preferButton'],
       },
     ],
+    'no-unused-vars': 'warn',
   },
 };
