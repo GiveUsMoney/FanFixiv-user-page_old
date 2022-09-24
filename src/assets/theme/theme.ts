@@ -5,6 +5,8 @@ import {
   PaletteColorOptions,
 } from '@mui/material/styles';
 
+import { MuiCard, MuiSvgIcon } from './components';
+
 declare module '@mui/material/styles' {
   interface Palette {
     cta: PaletteColor;
@@ -37,5 +39,9 @@ export default createTheme({
   },
   typography: {
     fontFamily: ['MinSans', '-apple-system', 'Arial', 'sans-serif'].join(','),
+  },
+  components: {
+    MuiCard,
+    MuiSvgIcon,
   },
 });
