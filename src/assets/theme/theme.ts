@@ -11,12 +11,18 @@ declare module '@mui/material/styles' {
     main: PaletteColor;
     secondary: PaletteColor;
     hover: PaletteColor;
+    button: PaletteColor;
+    gray1: PaletteColor;
+    gray2: PaletteColor;
   }
   interface PaletteOptions {
     cta?: PaletteColorOptions | undefined;
     main?: PaletteColorOptions | undefined;
     secondary?: PaletteColorOptions | undefined;
     hover?: PaletteColorOptions | undefined;
+    button?: PaletteColorOptions | undefined;
+    gray1?: PaletteColorOptions | undefined;
+    gray2?: PaletteColorOptions | undefined;
   }
 }
 
@@ -33,6 +39,15 @@ export default createTheme({
     },
     hover: {
       main: '#F8C7C7',
+    },
+    button: {
+      main: '#af3030',
+    },
+    gray1: {
+      main: '#606060',
+    },
+    gray2: {
+      main: '#828282',
     },
   },
   typography: {
