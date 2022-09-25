@@ -4,6 +4,7 @@ import { css } from '@emotion/react';
 import { Button } from '@mui/material';
 
 import theme from '../../../../assets/theme/theme';
+import AdultSwitch from './AdultSwitch';
 
 const rootStyle = css`
   font-weight: bold;
@@ -15,11 +16,15 @@ const rootStyle = css`
 `;
 
 const buttonStyle = css`
-  margin-left: 16px;
   color: ${theme.palette.button.main};
   padding: 0;
   margin: 0;
+  margin-left: 16px;
   text-transform: none;
+`;
+
+const adultSwitchStyle = css`
+  margin-left: 16px;
 `;
 
 export default function Buttons() {
@@ -31,6 +36,9 @@ export default function Buttons() {
       <Button variant="text" css={buttonStyle}>
         Join
       </Button>
+      <div css={adultSwitchStyle}>
+        <AdultSwitch />
+      </div>
     </div>
   );
 }
