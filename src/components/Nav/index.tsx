@@ -2,7 +2,7 @@
 
 import { css } from '@emotion/react';
 
-import theme from '../../../assets/theme/theme';
+import theme from '../../assets/theme/theme';
 import Buttons from './Buttons';
 import Logo from './Logo';
 import Search from './Search';

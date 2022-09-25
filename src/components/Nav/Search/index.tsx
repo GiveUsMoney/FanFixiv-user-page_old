@@ -3,7 +3,7 @@
 import { css } from '@emotion/react';
 import { IconButton, InputBase } from '@mui/material';
 
-import theme from '../../../../assets/theme/theme';
+import theme from '../../../assets/theme/theme';
 
 const searchBoxStyle = css`
   width: 605px;

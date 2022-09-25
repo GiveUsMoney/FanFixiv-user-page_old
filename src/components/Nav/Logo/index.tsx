@@ -3,7 +3,7 @@
 import { css } from '@emotion/react';
 import { Button } from '@mui/material';
 
-import theme from '../../../../assets/theme/theme';
+import theme from '../../../assets/theme/theme';
 
 const logoStyle = css`
   font-family: Impact;

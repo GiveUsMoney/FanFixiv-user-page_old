@@ -3,7 +3,7 @@
 import { css } from '@emotion/react';
 import { useState } from 'react';
 
-import theme from '../../../../../assets/theme/theme';
+import theme from '../../../../assets/theme/theme';
 
 export default function AdultSwitch() {
   const [active, setActive] = useState(false);
