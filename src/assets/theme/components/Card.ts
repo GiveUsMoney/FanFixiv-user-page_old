@@ -1,6 +1,6 @@
 import { Components } from '@mui/material';
 
-const MuiCard: Components['MuiCard'] = {
+export const MuiCard: Components['MuiCard'] = {
   defaultProps: {
     sx: {
       maxWidth: 210,
@@ -10,5 +10,3 @@ const MuiCard: Components['MuiCard'] = {
     },
   },
 };
-
-export default MuiCard;

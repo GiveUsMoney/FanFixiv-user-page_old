@@ -1,16 +1,13 @@
 import { Button, Grid, styled, SvgIcon, Typography } from '@mui/material';
 
-import { SampleContent } from '..';
-import ContentCard from './ContentCard';
+import { ContentCard } from '../../../../components/card';
+import { ContentsSectionProps } from './interface';
 
-interface Props {
-  title: string;
-  moreUrl: string;
-  disabled?: boolean;
-  contents: SampleContent[];
-}
-
-export default function ContentsSection({ title, contents, disabled }: Props) {
+export default function ContentsSection({
+  title,
+  contents,
+  disabled,
+}: ContentsSectionProps) {
   return (
     <FFContentsSectionWrapper>
       <FFContentsSectionHeader>
@@ -29,8 +26,8 @@ export default function ContentsSection({ title, contents, disabled }: Props) {
         </FFMoreButton>
       </FFContentsSectionHeader>
       <Grid container spacing={3} justifyContent="space-between">
-        {contents.map((content: SampleContent) => (
-          <Grid key={content.sampleContentId} item justifyContent="center">
+        {contents.map((content) => (
+          <Grid key={content.seq} item justifyContent="center">
             <ContentCard {...content} disabled={disabled} />
           </Grid>
         ))}

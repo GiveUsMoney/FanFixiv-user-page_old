@@ -10,29 +10,20 @@ import {
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
-import { SampleContent } from '..';
-
-interface Props extends SampleContent {
-  disabled?: boolean;
-}
+import { ContentCardProps } from './interface';
 
 export default function ContentCard({
   title,
-  subtitle,
-  thumnail,
+  thumbnail,
   tags,
   disabled,
-}: Props) {
-  const test = () => {
-    console.log('test');
-  };
-
+}: ContentCardProps) {
   return (
     <Card>
       <CardMedia
         component="img"
         height="168"
-        image={thumnail}
+        image={thumbnail}
         alt={title}
         sx={{
           WebkitFilter: disabled ? 'brightness(50%)' : '',
@@ -68,15 +59,15 @@ export default function ContentCard({
             </FFIconButton>
           </FFButtonGroup>
         </FFCardContentHeader>
-        <FFContentSubTitle variant="subtitle1">{subtitle}</FFContentSubTitle>
+        <FFContentSubTitle variant="subtitle1">와쿠이 켄</FFContentSubTitle>
       </FFCardContent>
       <FFCardActions disableSpacing>
-        {tags.map(({ label, sampleTageId }) => (
+        {tags.map(({ seq, name }) => (
           <FFChip
-            key={sampleTageId}
-            label={`#${label}`}
+            key={seq}
+            label={`#${name}`}
             size="small"
-            onClick={test}
+            onClick={() => {}}
           />
         ))}
       </FFCardActions>

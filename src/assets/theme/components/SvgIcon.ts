@@ -1,6 +1,6 @@
 import { Components } from '@mui/material';
 
-const MuiSvgIcon: Components['MuiSvgIcon'] = {
+export const MuiSvgIcon: Components['MuiSvgIcon'] = {
   styleOverrides: {
     root: {
       width: 16,
@@ -8,5 +8,3 @@ const MuiSvgIcon: Components['MuiSvgIcon'] = {
     },
   },
 };
-
-export default MuiSvgIcon;
