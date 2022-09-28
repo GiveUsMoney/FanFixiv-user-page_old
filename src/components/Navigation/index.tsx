@@ -1,19 +1,17 @@
-/** @jsxImportSource @emotion/react */
-
-import { css } from '@emotion/react';
+import styled from '@emotion/styled';
 
 import theme from '../../assets/theme/theme';
 import Buttons from './Buttons';
 import Logo from './Logo';
 import Search from './Search';
 
-const rootStyle = css`
+const Root = styled.div`
   width: 100%;
   height: 64px;
   background-color: ${theme.palette.cta.main};
 `;
 
-const mainStyle = css`
+const Main = styled.div`
   margin-left: 320px;
   width: calc(100% - 640px);
   height: 100%;
@@ -22,14 +20,14 @@ const mainStyle = css`
   align-items: center;
 `;
 
-export default function Nav() {
+export default function Navigation() {
   return (
-    <div css={rootStyle}>
-      <div css={mainStyle}>
+    <Root>
+      <Main>
         <Logo />
         <Search />
         <Buttons />
-      </div>
-    </div>
+      </Main>
+    </Root>
   );
 }

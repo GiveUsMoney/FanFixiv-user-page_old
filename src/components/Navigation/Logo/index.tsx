@@ -1,11 +1,9 @@
-/** @jsxImportSource @emotion/react */
-
-import { css } from '@emotion/react';
 import { Button } from '@mui/material';
+import muiStyled from '@mui/system/styled';
 
 import theme from '../../../assets/theme/theme';
 
-const logoStyle = css`
+const LogoButton = muiStyled(Button)`
   font-family: Impact;
   color: ${theme.palette.button.main};
   font-size: 22px;
@@ -16,5 +14,5 @@ const logoStyle = css`
 `;
 
 export default function Logo() {
-  return <Button css={logoStyle}>FanFixiv</Button>;
+  return <LogoButton>FanFixiv</LogoButton>;
 }

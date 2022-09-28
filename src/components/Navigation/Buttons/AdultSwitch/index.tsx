@@ -1,25 +1,47 @@
 /** @jsxImportSource @emotion/react */
 
 import { css } from '@emotion/react';
+import styled from '@emotion/styled';
 import { useState } from 'react';
 
 import theme from '../../../../assets/theme/theme';
 
+const Root = styled.div`
+  width: 46px;
+  height: 26px;
+  position: relative;
+  border-radius: 13px;
+  &:hover {
+    cursor: pointer;
+  }
+  border: none;
+  display: block;
+  background-color: white;
+  user-select: none;
+`;
+
+const OnText = styled.div`
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: ${theme.palette.button.main};
+  font-size: 12px;
+  font-weight: bold;
+`;
+
+const OffText = styled.div`
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: ${theme.palette.gray1.main};
+  font-size: 12px;
+  font-weight: bold;
+`;
+
 export default function AdultSwitch() {
   const [active, setActive] = useState(false);
-
-  const rootStyle = css`
-    width: 46px;
-    height: 26px;
-    position: relative;
-    border-radius: 13px;
-    &:hover {
-      cursor: pointer;
-    }
-    border: none;
-    display: block;
-    background-color: white;
-  `;
 
   const trackStyle = css`
     width: 100%;
@@ -54,34 +76,14 @@ export default function AdultSwitch() {
     z-index: 1;
   `;
 
-  const onTextStyle = css`
-    position: absolute;
-    left: 4px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: ${theme.palette.button.main};
-    font-size: 12px;
-    font-weight: bold;
-  `;
-
-  const offTextStyle = css`
-    position: absolute;
-    right: 4px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: ${theme.palette.gray1.main};
-    font-size: 12px;
-    font-weight: bold;
-  `;
-
   return (
-    <button css={rootStyle} onClick={() => setActive(!active)}>
+    <Root onClick={() => setActive(!active)}>
       <div css={trackStyle}></div>
       <div css={thumbStyle}>
         <div>19</div>
       </div>
-      <div css={onTextStyle}>On</div>
-      <div css={offTextStyle}>Off</div>
-    </button>
+      <OnText>On</OnText>
+      <OffText>Off</OffText>
+    </Root>
   );
 }
