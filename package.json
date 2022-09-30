@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@craco/craco": "^6.4.5",
-    "@emotion/babel-preset-css-prop": "^11.10.0",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@mui/material": "^5.10.6",
@@ -47,6 +46,7 @@
     ]
   },
   "devDependencies": {
+    "@emotion/babel-preset-css-prop": "^11.10.0",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.11.49",
     "@types/react": "^18.0.17",
