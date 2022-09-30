@@ -18,10 +18,23 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "jsxImportSource": "@emotion/react",
+    "baseUrl": "./",
+    "paths": {
+      "@src/*": ["./src/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@icons/*": ["./src/assets/icons/*"],
+      "@svgs/*": ["./src/assets/svgs/*"],
+      "@theme/*": ["./src/assets/theme/*"],
+    },
   },
   "include": [
     "src"
   ],
-  "types": ["react/next", "react-dom/next"]
+  "types": ["react/next", "react-dom/next"],
+  "typeRoots": [
+    "node_modules/@types",
+    "types"
+  ]
 }
