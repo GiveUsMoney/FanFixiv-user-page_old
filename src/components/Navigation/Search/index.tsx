@@ -48,11 +48,9 @@ export default function Search() {
       <ButtonsWrapper>
         <IconButton type="button">
           <HashIcon />
-          {/* <SvgIcon component={HashIcon} inheritViewBox /> */}
         </IconButton>
         <IconButton type="button">
           <SearchIcon />
-          {/* <Button src={SearchIcon} alt="search" /> */}
         </IconButton>
       </ButtonsWrapper>
     </SearchBox>
