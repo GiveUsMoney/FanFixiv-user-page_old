@@ -24,8 +24,7 @@
     "paths": {
       "@src/*": ["./src/*"],
       "@assets/*": ["./src/assets/*"],
-      "@icons/*": ["./src/assets/icons/*"],
-      "@svgs/*": ["./src/assets/svgs/*"],
+      "@icons": ["./src/assets/icons/index"],
       "@theme/*": ["./src/assets/theme/*"],
     },
   },
