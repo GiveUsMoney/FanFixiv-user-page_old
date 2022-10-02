@@ -1,10 +1,11 @@
-import settingsSvg from '../../../../../../../assets/svgs/navigation/settings.svg';
+import { SettingsIcon } from '@icons';
+
 import { Root } from '..';
 
 export default function Settings() {
   return (
     <Root>
-      <img alt="settings" src={settingsSvg} />
+      <SettingsIcon />
       <div>설정</div>
     </Root>
   );

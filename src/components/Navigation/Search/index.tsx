@@ -1,9 +1,8 @@
 import styled from '@emotion/styled';
+import { HashIcon, SearchIcon } from '@icons';
 import { IconButton as MuiIconButton, InputBase } from '@mui/material';
 import muiStyled from '@mui/system/styled';
 
-import hashSvg from '../../../assets/svgs/navigation/hash.svg';
-import searchSvg from '../../../assets/svgs/navigation/search.svg';
 import theme from '../../../assets/theme/theme';
 
 const SearchBox = styled.div`
@@ -48,10 +47,10 @@ export default function Search() {
       <SearchInput placeholder="검색어를 입력해주세요." />
       <ButtonsWrapper>
         <IconButton type="button">
-          <Button src={hashSvg} alt="hash" />
+          <HashIcon />
         </IconButton>
         <IconButton type="button">
-          <Button src={searchSvg} alt="search" />
+          <SearchIcon />
         </IconButton>
       </ButtonsWrapper>
     </SearchBox>

@@ -1,10 +1,11 @@
-import heartSvg from '../../../../../../../assets/svgs/navigation/heart.svg';
+import { HeartIcon } from '@icons';
+
 import { Root } from '..';
 
 export default function MyLike() {
   return (
     <Root>
-      <img alt="heart" src={heartSvg} />
+      <HeartIcon />
       <div>나의 좋아요</div>
     </Root>
   );

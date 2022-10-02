@@ -1,10 +1,11 @@
-import bellSvg from '../../../../../../../assets/svgs/navigation/bell.svg';
+import { BellIcon } from '@icons';
+
 import { Root } from '..';
 
 export default function Alarm() {
   return (
     <Root>
-      <img alt="bell" src={bellSvg} />
+      <BellIcon />
       <div>알람</div>
     </Root>
   );

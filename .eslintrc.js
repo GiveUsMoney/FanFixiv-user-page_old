@@ -47,5 +47,7 @@ module.exports = {
       },
     ],
     'no-unused-vars': 'warn',
+    /* emotion property */
+    'react/no-unknown-property': ['error', { ignore: ['css'] }],
   },
 };

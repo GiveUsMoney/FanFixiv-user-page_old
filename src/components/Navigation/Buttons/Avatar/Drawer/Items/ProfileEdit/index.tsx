@@ -1,10 +1,11 @@
-import pencilSvg from '../../../../../../../assets/svgs/navigation/pencil-create.svg';
+import { PencilIcon } from '@icons';
+
 import { Root } from '..';
 
 export default function ProfileEdit() {
   return (
     <Root>
-      <img alt="pencil" src={pencilSvg} />
+      <PencilIcon />
       <div>프로필 수정</div>
     </Root>
   );
