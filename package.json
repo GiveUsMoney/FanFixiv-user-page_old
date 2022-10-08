@@ -9,7 +9,8 @@
     "lint": "eslint \"./src/**/*.{ts,tsx,js,jsx}\"",
     "lint:fix": "eslint --fix \"./src/**/*.{ts,tsx,js,jsx}\"",
     "eject": "react-scripts eject",
-    "build:gh": "set PUBLIC_URL=/FanFixiv-user-page && react-scripts build",
+    "build-win:gh": "set \"PUBLIC_URL=/FanFixiv-user-page\" && craco build && copy build\\fonts\\index.css.gh-page build\\fonts\\index.css",
+    "build-linux:gh": "PUBLIC_URL=/FanFixiv-user-page && craco build && cp build/fonts/index.css.gh-page build/fonts/index.css",
     "deploy:gh": "gh-pages -d build"
   },
   "eslintConfig": {
@@ -35,6 +36,7 @@
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@mui/material": "^5.10.6",
+    "@mui/system": "^5.10.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.1",
@@ -44,6 +46,9 @@
   "devDependencies": {
     "@babel/core": "^7.19.3",
     "@emotion/babel-preset-css-prop": "^11.10.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.11.49",
     "@types/react": "^18.0.17",
@@ -62,9 +67,6 @@
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "gh-pages": "^4.0.0",
     "prettier": "^2.7.1",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.3.0",
-    "@testing-library/user-event": "^13.5.0",
     "typescript": "^4.7.4"
   }
 }
