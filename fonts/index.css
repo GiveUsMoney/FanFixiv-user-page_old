@@ -3,9 +3,9 @@
   font-weight: 900;
   font-display: swap;
   src: local('MinSans-Black'),
-  url('./fonts/MinSans-Black.woff2') format('woff2'),
-  url('./fonts/MinSans-Black.woff') format('woff'),
-  url('./fonts/MinSans-Black.otf') format('opentype');
+  url('./MinSans-Black.woff2') format('woff2'),
+  url('./MinSans-Black.woff') format('woff'),
+  url('./MinSans-Black.otf') format('opentype');
 }
 
 @font-face {
@@ -13,9 +13,9 @@
   font-weight: 700;
   font-display: swap;
   src: local('MinSans-Bold'),
-  url('./fonts/MinSans-Bold.woff2') format('woff2'),
-  url('./fonts/MinSans-Bold.woff') format('woff'),
-  url('./fonts/MinSans-Bold.otf') format('opentype');
+  url('./MinSans-Bold.woff2') format('woff2'),
+  url('./MinSans-Bold.woff') format('woff'),
+  url('./MinSans-Bold.otf') format('opentype');
 }
 
 @font-face {
@@ -23,9 +23,9 @@
   font-weight: 500;
   font-display: swap;
   src: local('MinSans-Medium'),
-  url('./fonts/MinSans-Medium.woff2') format('woff2'),
-  url('./fonts/MinSans-Medium.woff') format('woff'),
-  url('./fonts/MinSans-Medium.otf') format('opentype');
+  url('./MinSans-Medium.woff2') format('woff2'),
+  url('./MinSans-Medium.woff') format('woff'),
+  url('./MinSans-Medium.otf') format('opentype');
 }
 
 @font-face {
@@ -33,9 +33,9 @@
   font-weight: 400;
   font-display: swap;
   src: local('MinSans-Regular'),
-  url('./fonts/MinSans-Regular.woff2') format('woff2'),
-  url('./fonts/MinSans-Regular.woff') format('woff'),
-  url('./fonts/MinSans-Regular.otf') format('opentype');
+  url('./MinSans-Regular.woff2') format('woff2'),
+  url('./MinSans-Regular.woff') format('woff'),
+  url('./MinSans-Regular.otf') format('opentype');
 }
 
 @font-face {
@@ -43,9 +43,9 @@
   font-weight: 300;
   font-display: swap;
   src: local('MinSans-Light'),
-  url('./fonts/MinSans-Light.woff2') format('woff2'),
-  url('/fonts/MinSans-Light.woff') format('woff'),
-  url('/fonts/MinSans-Light.otf') format('opentype');
+  url('./MinSans-Light.woff2') format('woff2'),
+  url('/MinSans-Light.woff') format('woff'),
+  url('/MinSans-Light.otf') format('opentype');
 }
 
 @font-face {
@@ -53,7 +53,7 @@
   font-weight: 100;
   font-display: swap;
   src: local('MinSans-Thin'),
-  url('./fonts/MinSans-Thin.woff2') format('woff2'),
-  url('./fonts/MinSans-Thin.woff') format('woff'),
-  url('./fonts/MinSans-Thin.otf') format('opentype');
+  url('./MinSans-Thin.woff2') format('woff2'),
+  url('./MinSans-Thin.woff') format('woff'),
+  url('./MinSans-Thin.otf') format('opentype');
 }
