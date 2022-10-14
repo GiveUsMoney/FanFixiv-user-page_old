@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
+import { Box } from '@mui/material';
 
-import theme from '../../../../../assets/theme/theme';
+import theme from '../../../assets/theme/theme';
 import Alarm from './Items/Alarm';
 import Empty from './Items/Empty';
 import Logout from './Items/Logout';
@@ -10,13 +11,16 @@ import Settings from './Items/Settings';
 import TagList from './Items/TagList';
 import Translate from './Items/Translate';
 
-const Root = styled.div`
+const Root = styled(Box)`
   width: 165px;
   border-radius: 10px;
   background-color: ${theme.palette.secondary.main};
   padding-top: 10px;
   padding-bottom: 10px;
   user-select: none;
+  position: absolute;
+  right: 380px;
+  z-index: 200;
 `;
 
 export default function Drawer() {

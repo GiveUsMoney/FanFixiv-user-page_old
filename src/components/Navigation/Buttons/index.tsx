@@ -1,7 +1,10 @@
 import styled from '@emotion/styled';
 import { Button as MuiButton } from '@mui/material';
-import muiStyled from '@mui/system/styled';
-import { useState } from 'react';
+import loginState from '@src/states/login';
+import loginPopupState from '@src/states/loginPopup';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import { useRecoilState } from 'recoil';
 
 import theme from '../../../assets/theme/theme';
 import AdultSwitch from './AdultSwitch';
@@ -16,7 +19,7 @@ const Root = styled.div`
   align-items: center;
 `;
 
-const Button = muiStyled(MuiButton)`
+const Button = styled(MuiButton)`
   color: ${theme.palette.button.main};
   padding: 0;
   margin: 0;
@@ -29,13 +32,37 @@ const MarginWrapper = styled.div`
 `;
 
 export default function Buttons() {
-  const [isLoggedIn, setLoggedIn] = useState(false);
+  const [loginPopup, setLoginPopup] = useRecoilState(loginPopupState);
+  const [login, setLogin] = useRecoilState(loginState);
+
+  useEffect(() => {
+    const checkLogin = async () => {
+      try {
+        await axios.get(
+          `${process.env.REACT_APP_AUTH_SERVER_HOST}/auth/profile`,
+          {
+            params: {
+              userEmail: 'exam5432@naver.com',
+            },
+          },
+        );
+        return true;
+      } catch (e) {
+        return false;
+      }
+    };
+    const validateLogin = async () => {
+      setLogin(await checkLogin());
+    };
+    // checkLogin();
+    validateLogin();
+  }, []);
 
   return (
     <Root>
-      {!isLoggedIn ? (
+      {!login ? (
         <div>
-          <Button variant="text" onClick={() => setLoggedIn(!isLoggedIn)}>
+          <Button variant="text" onClick={() => setLoginPopup(!loginPopup)}>
             Login
           </Button>
           <Button variant="text">Join</Button>

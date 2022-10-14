@@ -1,9 +1,9 @@
 import { ChevronBottomIcon, ChevronUpIcon } from '@icons';
 import { Avatar as MuiAvatar } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import React, { useState } from 'react';
-
-import Drawer from './Drawer';
+import avatarDrawerState from '@src/states/avatarDrawer';
+import React from 'react';
+import { useRecoilState } from 'recoil';
 
 const Root = styled('div')`
   position: relative;
@@ -15,37 +15,38 @@ const Root = styled('div')`
   }
 `;
 
-const DrawerWrapper = styled('div')`
-  position: absolute;
-  right: 0;
-  top: 52px;
-`;
-
 const AvatarCircle = styled(MuiAvatar)`
   cursor: pointer;
   margin-right: 4px;
 `;
 
+const StyledBottomIcon = styled(ChevronBottomIcon)`
+  cursor: pointer;
+`;
+
+const StyledUpIcon = styled(ChevronUpIcon)`
+  cursor: pointer;
+`;
+
 export default function Avatar() {
-  const [isDrawered, setDrawered] = useState(false);
+  const [avatarDrawer, setAvatarDrawer] = useRecoilState(avatarDrawerState);
 
   return (
     <Root>
-      <AvatarCircle onClick={() => setDrawered(!isDrawered)} />
-      {!isDrawered ? (
-        <ChevronBottomIcon
+      <AvatarCircle onClick={() => setAvatarDrawer(!avatarDrawer)} />
+      {!avatarDrawer ? (
+        <StyledBottomIcon
           sx={{ color: '#AF3030', width: 16, height: 16 }}
           inheritViewBox
+          onClick={() => setAvatarDrawer(!avatarDrawer)}
         />
       ) : (
         <React.Fragment>
-          <ChevronUpIcon
+          <StyledUpIcon
             sx={{ color: '#AF3030', width: 16, height: 16 }}
             inheritViewBox
+            onClick={() => setAvatarDrawer(!avatarDrawer)}
           />
-          <DrawerWrapper>
-            <Drawer />
-          </DrawerWrapper>
         </React.Fragment>
       )}
     </Root>
