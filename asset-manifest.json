@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/static/js/main.1d052ce4.js",
-    "index.html": "/index.html",
-    "main.1d052ce4.js.map": "/static/js/main.1d052ce4.js.map"
+    "main.js": "/FanFixiv-user-page/static/js/main.99e51d75.js",
+    "index.html": "/FanFixiv-user-page/index.html",
+    "main.99e51d75.js.map": "/FanFixiv-user-page/static/js/main.99e51d75.js.map"
   },
   "entrypoints": [
-    "static/js/main.1d052ce4.js"
+    "static/js/main.99e51d75.js"
   ]
 }
