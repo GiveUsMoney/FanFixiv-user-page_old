@@ -133,7 +133,7 @@ export default function Body() {
       );
       window.localStorage.setItem('access-token', ret.data.token);
       setBlocked(false);
-      location.href = '/';
+      location.href = `${process.env.REACT_APP_PUBLIC_URL}`;
     } catch (e: any) {
       setBlocked(true);
     }
