@@ -16,9 +16,9 @@ const Root = styled.div`
   z-index: 100;
 `;
 
-const Main = styled(Container)`
-  // margin-left: calc(100% / 6); figma에선 이렇게
-  // width: calc(100% - 100% / 3); figma에선 이렇게
+const Main = styled.div`
+  margin-left: calc(100% / 6);
+  width: calc(100% - 100% / 3);
   height: 100%;
   position: relative;
 `;

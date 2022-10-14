@@ -19,7 +19,7 @@ const Root = styled(Box)`
   padding-bottom: 10px;
   user-select: none;
   position: absolute;
-  right: 380px;
+  right: calc(100% / 6);
   z-index: 200;
 `;
 
