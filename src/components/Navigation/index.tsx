@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { Container } from '@mui/material';
 import avatarDrawerState from '@src/states/avatarDrawer';
 import { useRecoilState } from 'recoil';
 
@@ -15,13 +16,32 @@ const Root = styled.div`
   z-index: 100;
 `;
 
-const Main = styled.div`
-  margin-left: 320px;
-  width: calc(100% - 640px);
+const Main = styled(Container)`
+  // margin-left: calc(100% / 6); figma에선 이렇게
+  // width: calc(100% - 100% / 3); figma에선 이렇게
   height: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  position: relative;
+`;
+
+const LogoWrapper = styled.div`
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+`;
+
+const ButtonsWrapper = styled.div`
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+`;
+
+const SearchWrapper = styled.div`
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 `;
 
 const AvatarDrawer = styled(Drawer)``;
@@ -31,9 +51,15 @@ export default function Navigation() {
   return (
     <Root>
       <Main>
-        <Logo />
-        <Search />
-        <Buttons />
+        <LogoWrapper>
+          <Logo />
+        </LogoWrapper>
+        <ButtonsWrapper>
+          <Buttons />
+        </ButtonsWrapper>
+        <SearchWrapper>
+          <Search />
+        </SearchWrapper>
       </Main>
       {avatarDrawer ? <AvatarDrawer /> : false}
     </Root>

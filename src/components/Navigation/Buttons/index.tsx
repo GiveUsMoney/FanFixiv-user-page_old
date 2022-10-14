@@ -72,9 +72,13 @@ export default function Buttons() {
           <Avatar />
         </MarginWrapper>
       )}
-      <MarginWrapper>
-        <AdultSwitch />
-      </MarginWrapper>
+      {!login ? (
+        <MarginWrapper>
+          <AdultSwitch />
+        </MarginWrapper>
+      ) : (
+        false
+      )}
     </Root>
   );
 }
