@@ -17,7 +17,6 @@ export default function Logout() {
     axios.defaults.headers.common['Authorization'] = null;
     setLogin(false);
 
-    console.log(process.env.REACT_APP_PUBLIC_URL);
     location.href = `${process.env.REACT_APP_PUBLIC_URL}`;
   };
 

@@ -17,8 +17,16 @@ const refreshAuth = async () => {
   }
 };
 
+const initializeAxios = () => {
+  axios.defaults.headers.common[
+    'Authorization'
+  ] = `Bearer ${window.localStorage.getItem('access-token')}`;
+  axios.defaults.withCredentials = true;
+};
+
 (async () => {
   await refreshAuth();
+  initializeAxios();
   const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement,
   );

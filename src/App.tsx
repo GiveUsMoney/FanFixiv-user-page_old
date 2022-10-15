@@ -11,16 +11,6 @@ import Navigation from './components/Navigation';
 import Router from './components/Router';
 
 function App() {
-  useEffect(() => {
-    const initializeAxios = () => {
-      axios.defaults.headers.common[
-        'Authorization'
-      ] = `Bearer ${window.localStorage.getItem('access-token')}`;
-      axios.defaults.withCredentials = true;
-    };
-    initializeAxios();
-  }, []);
-
   return (
     <ThemeProvider theme={theme}>
       <RecoilRoot>
