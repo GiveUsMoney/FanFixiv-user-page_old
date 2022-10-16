@@ -27,6 +27,12 @@ npm install -g pnpm
 pnpm install
 ```
 
+## ENV
+```env
+REACT_APP_PUBLIC_URL=YOUR_GITHUB_PAGE_PUBLIC_URL
+REACT_APP_API_BASE_URL=YOUR_API_BASE_URL
+```
+
 ## Run
 ```bash
 pnpm start
