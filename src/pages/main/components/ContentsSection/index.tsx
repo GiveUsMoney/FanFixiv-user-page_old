@@ -1,6 +1,6 @@
 import { Button, Grid, styled, SvgIcon, Typography } from '@mui/material';
+import { ContentCard } from '@src/components';
 
-import { ContentCard } from '../../../../components/card';
 import { ContentsSectionProps } from './interface';
 
 export default function ContentsSection({
@@ -57,5 +57,5 @@ const FFMoreButton = styled(Button)({
 const FFContentsSectionTitle = styled(Typography)(({ theme }) => ({
   fontWeight: 'bold',
   fontSize: 20,
-  color: theme.palette.main.main,
+  color: theme.palette.primary.main,
 }));

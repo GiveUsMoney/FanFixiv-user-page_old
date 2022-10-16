@@ -1,8 +1,7 @@
+import theme from '@assets/theme/theme';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { useState } from 'react';
-
-import theme from '../../../../assets/theme/theme';
 
 const Root = styled.div`
   width: 46px;

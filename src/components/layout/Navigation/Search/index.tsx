@@ -1,9 +1,8 @@
+import theme from '@assets/theme/theme';
 import styled from '@emotion/styled';
 import { HashIcon, SearchIcon } from '@icons';
 import { IconButton as MuiIconButton, InputBase } from '@mui/material';
 import muiStyled from '@mui/system/styled';
-
-import theme from '../../../assets/theme/theme';
 
 const SearchBox = styled.div`
   width: 605px;

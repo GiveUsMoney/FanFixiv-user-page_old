@@ -1,6 +1,5 @@
+import theme from '@assets/theme/theme';
 import styled from '@emotion/styled';
-
-import theme from '../../../../../../../assets/theme/theme';
 
 const Root = styled.div`
   width: 100%;

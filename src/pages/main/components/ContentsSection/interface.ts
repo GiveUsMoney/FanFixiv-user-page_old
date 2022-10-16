@@ -1,4 +1,4 @@
-import { Content } from '../../../../models';
+import { Content } from '@src/apis/dtos';
 
 export interface ContentsSectionProps {
   title: string;

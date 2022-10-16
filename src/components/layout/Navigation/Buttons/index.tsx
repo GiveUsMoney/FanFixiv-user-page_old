@@ -1,9 +1,9 @@
+import theme from '@assets/theme/theme';
 import styled from '@emotion/styled';
 import { Button as MuiButton } from '@mui/material';
 import muiStyled from '@mui/system/styled';
 import { useState } from 'react';
 
-import theme from '../../../assets/theme/theme';
 import AdultSwitch from './AdultSwitch';
 import Avatar from './Avatar';
 
