@@ -37,7 +37,7 @@ export interface RefreshResponseDto {
 
 // TODO: 후일 프로필 DB가 추가되면 더 많은 property를 포함할 예정
 export interface GetProfileRequestDto {
-  userEmail: string;
+  // userEmail: string;
 }
 
 export interface GetProfileResponseDto {

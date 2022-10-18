@@ -39,7 +39,7 @@ export default function Buttons() {
   useEffect(() => {
     const checkLogin = async () => {
       try {
-        await userApi.getProfile('exam5432@naver.com');
+        console.log(await userApi.getProfile());
         return true;
       } catch (e) {
         return false;

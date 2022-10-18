@@ -57,13 +57,8 @@ export class UserApi extends BaseApi {
     );
   }
 
-  getProfile(email: string) {
-    return this.post<GetProfileResponseDto, GetProfileRequestDto>(
-      `${this.authResource}/profile`,
-      {
-        userEmail: email,
-      },
-    );
+  getProfile() {
+    return this.get<GetProfileResponseDto>(`${this.authResource}/profile`, {});
   }
 
   refresh() {
