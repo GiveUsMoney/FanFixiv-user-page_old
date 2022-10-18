@@ -109,11 +109,17 @@ const Util = styled.div`
   align-items: center;
 `;
 
-const UtilButton = styled(Button)`
+const UtilButton = styled.div`
   height: 16px;
   font-family: MinSans;
   font-size: 12px;
   color: ${theme.palette.gray2.main};
+  user-select: none;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+    color: black;
+  }
 `;
 
 export type FormType = {
@@ -170,7 +176,7 @@ export default function Body() {
             Twitter로 로그인
           </TwitterLoginButton>
           <Util>
-            <UtilButton>아이디/비밀번호 찾기</UtilButton>
+            <UtilButton>비밀번호 찾기</UtilButton>
             <UtilButton>회원가입</UtilButton>
           </Util>
         </Main>
