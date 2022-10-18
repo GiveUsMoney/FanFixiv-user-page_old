@@ -46,7 +46,7 @@ module.exports = {
         aspects: ['invalidHref', 'preferButton'],
       },
     ],
-    'no-unused-vars': 'warn',
+    'no-unused-vars': 'off',
     /* emotion property */
     'react/no-unknown-property': ['error', { ignore: ['css'] }],
   },

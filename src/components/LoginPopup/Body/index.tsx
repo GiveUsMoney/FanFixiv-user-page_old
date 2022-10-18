@@ -27,7 +27,7 @@ const Main = styled.div`
 const LoginLabelWrapper = styled.div`
   display: flex;
   justify-content: center;
-  color: ${theme.palette.main.main};
+  color: ${theme.palette.primary.main};
   font-family: MinSans;
   font-size: 20px;
   margin-bottom: 48px;
