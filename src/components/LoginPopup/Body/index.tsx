@@ -81,10 +81,10 @@ const LoginButton = styled(Button)`
   height: 40px;
   border-radius: 10px;
   margin-bottom: 8px;
-  background-color: ${theme.palette.secondary.main};
+  background-color: ${theme.palette.button.main};
   color: white;
   &:hover {
-    background-color: ${theme.palette.button.main};
+    background-color: ${theme.palette.secondary.main};
   }
 `;
 
@@ -96,7 +96,7 @@ const TwitterLoginButton = styled(Button)`
   background-color: #1d9bf0;
   color: white;
   &:hover {
-    background-color: #1d9bf0;
+    background-color: #66b6ff;
   }
   text-transform: none;
 `;
