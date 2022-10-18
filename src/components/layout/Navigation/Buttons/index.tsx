@@ -1,6 +1,7 @@
 import theme from '@assets/theme/theme';
 import styled from '@emotion/styled';
 import { Button as MuiButton } from '@mui/material';
+import { userApi } from '@src/apis';
 import loginState from '@src/states/login';
 import loginPopupState from '@src/states/loginPopup';
 import axios from 'axios';
@@ -38,14 +39,7 @@ export default function Buttons() {
   useEffect(() => {
     const checkLogin = async () => {
       try {
-        await axios.get(
-          `${process.env.REACT_APP_AUTH_SERVER_HOST}/auth/profile`,
-          {
-            params: {
-              userEmail: 'exam5432@naver.com',
-            },
-          },
-        );
+        await userApi.getProfile('exam5432@naver.com');
         return true;
       } catch (e) {
         return false;
@@ -54,7 +48,6 @@ export default function Buttons() {
     const validateLogin = async () => {
       setLogin(await checkLogin());
     };
-    // checkLogin();
     validateLogin();
   }, []);
 

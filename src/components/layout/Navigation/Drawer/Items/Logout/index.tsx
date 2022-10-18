@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { LogoutIcon } from '@icons';
 import { SvgIcon } from '@mui/material';
+import { userApi } from '@src/apis';
 import loginState from '@src/states/login';
 import axios from 'axios';
 import { useRecoilState } from 'recoil';
@@ -14,7 +15,7 @@ export default function Logout() {
 
   const handleClick = () => {
     window.localStorage.setItem('access-token', '');
-    axios.defaults.headers.common['Authorization'] = false;
+    userApi.logout();
     setLogin(false);
 
     location.href = `${process.env.REACT_APP_PUBLIC_URL}`;

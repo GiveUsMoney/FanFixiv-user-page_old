@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { Button, OutlinedInput } from '@mui/material';
 import { SvgIcon } from '@mui/material';
+import { userApi } from '@src/apis';
 import { ExclamationIcon, TwitterIcon } from '@src/assets/icons';
 import theme from '@src/assets/theme/theme';
 import BlockMessage from '@src/components/BlockMessage';
@@ -127,11 +128,11 @@ export default function Body() {
 
   const action = async () => {
     try {
-      const ret = await axios.post(
-        `${process.env.REACT_APP_AUTH_SERVER_HOST}/auth/login`,
-        formContext.getValues(),
+      const ret = await userApi.login(
+        formContext.getValues().email,
+        formContext.getValues().pw,
       );
-      window.localStorage.setItem('access-token', ret.data.token);
+      window.localStorage.setItem('access-token', ret.token);
       setBlocked(false);
       location.href = `${process.env.REACT_APP_PUBLIC_URL}`;
     } catch (e: any) {
@@ -150,7 +151,7 @@ export default function Body() {
             <div>로그인</div>
           </LoginLabelWrapper>
           <IdBoxWrapper>
-            <InputBox name="id" placeholder="id" />
+            <InputBox name="email" placeholder="email" />
           </IdBoxWrapper>
           <PwBoxWrapper>
             <InputBox name="pw" type="password" placeholder="pw" />

@@ -17,5 +17,5 @@ const routes: RouteObject[] = [
 ];
 
 export const router = createBrowserRouter(routes, {
-  basename: process.env.PUBLIC_URL,
+  basename: process.env.REACT_APP_PUBLIC_URL,
 });
