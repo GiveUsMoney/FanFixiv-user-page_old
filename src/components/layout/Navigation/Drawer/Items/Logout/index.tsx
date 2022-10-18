@@ -15,7 +15,7 @@ export default function Logout() {
 
   const handleClick = () => {
     window.localStorage.setItem('access-token', '');
-    userApi.logout();
+    userApi.setDefaultCommonHeader('Authorization', false);
     setLogin(false);
 
     location.href = `${process.env.REACT_APP_PUBLIC_URL}`;

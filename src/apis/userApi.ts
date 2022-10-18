@@ -67,8 +67,8 @@ export class UserApi extends BaseApi {
     );
   }
 
-  logout() {
-    this.axiosInstance.defaults.headers.common['Authorization'] = false;
+  setDefaultCommonHeader(key: string, value: any) {
+    this.axiosInstance.defaults.headers.common[key] = value;
   }
 }
 
