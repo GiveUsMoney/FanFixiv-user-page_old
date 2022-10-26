@@ -3,9 +3,9 @@
   font-weight: 900;
   font-display: swap;
   src: local('MinSans-Black'),
-  url('/FanFixiv-user-page/fonts/MinSans-Black.woff2') format('woff2'),
-  url('/FanFixiv-user-page/fonts/MinSans-Black.woff') format('woff'),
-  url('/FanFixiv-user-page/fonts/MinSans-Black.otf') format('opentype');
+  url('/fonts/MinSans-Black.woff2') format('woff2'),
+  url('/fonts/MinSans-Black.woff') format('woff'),
+  url('/fonts/MinSans-Black.otf') format('opentype');
 }
 
 @font-face {
@@ -13,9 +13,9 @@
   font-weight: 700;
   font-display: swap;
   src: local('MinSans-Bold'),
-  url('/FanFixiv-user-page/fonts/MinSans-Bold.woff2') format('woff2'),
-  url('/FanFixiv-user-page/fonts/MinSans-Bold.woff') format('woff'),
-  url('/FanFixiv-user-page/fonts/MinSans-Bold.otf') format('opentype');
+  url('/fonts/MinSans-Bold.woff2') format('woff2'),
+  url('/fonts/MinSans-Bold.woff') format('woff'),
+  url('/fonts/MinSans-Bold.otf') format('opentype');
 }
 
 @font-face {
@@ -23,9 +23,9 @@
   font-weight: 500;
   font-display: swap;
   src: local('MinSans-Medium'),
-  url('/FanFixiv-user-page/fonts/MinSans-Medium.woff2') format('woff2'),
-  url('/FanFixiv-user-page/fonts/MinSans-Medium.woff') format('woff'),
-  url('/FanFixiv-user-page/fonts/MinSans-Medium.otf') format('opentype');
+  url('/fonts/MinSans-Medium.woff2') format('woff2'),
+  url('/fonts/MinSans-Medium.woff') format('woff'),
+  url('/fonts/MinSans-Medium.otf') format('opentype');
 }
 
 @font-face {
@@ -33,9 +33,9 @@
   font-weight: 400;
   font-display: swap;
   src: local('MinSans-Regular'),
-  url('/FanFixiv-user-page/fonts/MinSans-Regular.woff2') format('woff2'),
-  url('/FanFixiv-user-page/fonts/MinSans-Regular.woff') format('woff'),
-  url('/FanFixiv-user-page/fonts/MinSans-Regular.otf') format('opentype');
+  url('/fonts/MinSans-Regular.woff2') format('woff2'),
+  url('/fonts/MinSans-Regular.woff') format('woff'),
+  url('/fonts/MinSans-Regular.otf') format('opentype');
 }
 
 @font-face {
@@ -43,9 +43,9 @@
   font-weight: 300;
   font-display: swap;
   src: local('MinSans-Light'),
-  url('/FanFixiv-user-page/fonts/MinSans-Light.woff2') format('woff2'),
-  url('/FanFixiv-user-page/fonts/MinSans-Light.woff') format('woff'),
-  url('/FanFixiv-user-page/fonts/MinSans-Light.otf') format('opentype');
+  url('/fonts/MinSans-Light.woff2') format('woff2'),
+  url('/fonts/MinSans-Light.woff') format('woff'),
+  url('/fonts/MinSans-Light.otf') format('opentype');
 }
 
 @font-face {
@@ -53,7 +53,7 @@
   font-weight: 100;
   font-display: swap;
   src: local('MinSans-Thin'),
-  url('/FanFixiv-user-page/fonts/MinSans-Thin.woff2') format('woff2'),
-  url('/FanFixiv-user-page/fonts/MinSans-Thin.woff') format('woff'),
-  url('/FanFixiv-user-page/fonts/MinSans-Thin.otf') format('opentype');
+  url('/fonts/MinSans-Thin.woff2') format('woff2'),
+  url('/fonts/MinSans-Thin.woff') format('woff'),
+  url('/fonts/MinSans-Thin.otf') format('opentype');
 }
