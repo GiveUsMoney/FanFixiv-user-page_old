@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "/static/js/main.66123cc1.js",
-    "index.html": "/index.html",
-    "main.66123cc1.js.map": "/static/js/main.66123cc1.js.map"
+    "main.js": "/FanFixiv-user-page/static/js/main.66123cc1.js",
+    "index.html": "/FanFixiv-user-page/index.html",
+    "main.66123cc1.js.map": "/FanFixiv-user-page/static/js/main.66123cc1.js.map"
   },
   "entrypoints": [
     "static/js/main.66123cc1.js"
