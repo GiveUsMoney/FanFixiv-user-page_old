@@ -10,7 +10,7 @@
     "lint:fix": "eslint --fix \"./src/**/*.{ts,tsx,js,jsx}\"",
     "eject": "react-scripts eject",
     "build-win:gh": "set \"PUBLIC_URL=/FanFixiv-user-page\" && craco build && copy build\\fonts\\index.css.gh-page build\\fonts\\index.css",
-    "build-linux:gh": "PUBLIC_URL=/FanFixiv-user-page && craco build && cp build/fonts/index.css.gh-page build/fonts/index.css",
+    "build-linux:gh": "export PUBLIC_URL=/FanFixiv-user-page && craco build && cp build/fonts/index.css.gh-page build/fonts/index.css",
     "deploy:gh": "gh-pages -d build"
   },
   "eslintConfig": {
