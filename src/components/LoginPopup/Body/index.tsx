@@ -172,6 +172,9 @@ export default function Body() {
             startIcon={
               <SvgIcon viewBox="0 0 16 13" component={TwitterIconSized} />
             }
+            onClick={() => {
+              location.href = `${process.env.REACT_APP_API_BASE_URL}/auth/oauth2/authorization/twitter`;
+            }}
           >
             Twitter로 로그인
           </TwitterLoginButton>
