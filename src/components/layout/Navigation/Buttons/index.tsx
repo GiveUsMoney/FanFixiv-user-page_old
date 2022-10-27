@@ -4,12 +4,11 @@ import { Button as MuiButton } from '@mui/material';
 import { userApi } from '@src/apis';
 import loginState from '@src/states/login';
 import loginPopupState from '@src/states/loginPopup';
-import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useRecoilState } from 'recoil';
 
 import AdultSwitch from './AdultSwitch';
-import Avatar from './Avatar';
+import ProfileAvatar from './ProfileAvatar';
 
 const Root = styled.div`
   font-weight: bold;
@@ -62,7 +61,7 @@ export default function Buttons() {
         </div>
       ) : (
         <MarginWrapper>
-          <Avatar />
+          <ProfileAvatar />
         </MarginWrapper>
       )}
       {login ? (
