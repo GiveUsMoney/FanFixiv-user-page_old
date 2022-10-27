@@ -1,18 +1,14 @@
 import styled from '@emotion/styled';
-import { Button, OutlinedInput } from '@mui/material';
+import { Button } from '@mui/material';
 import { SvgIcon } from '@mui/material';
 import { userApi } from '@src/apis';
-import { ExclamationIcon, TwitterIcon } from '@src/assets/icons';
+import { TwitterIcon } from '@src/assets/icons';
 import theme from '@src/assets/theme/theme';
 import BlockMessage from '@src/components/BlockMessage';
-import axios from 'axios';
-import { useEffect, useState } from 'react';
-import {
-  FormContainer,
-  TextFieldElement,
-  useForm,
-  useFormState,
-} from 'react-hook-form-mui';
+import { useState } from 'react';
+import { FormContainer, TextFieldElement, useForm } from 'react-hook-form-mui';
+
+import { LoginForm } from './interface';
 
 const Root = styled.div`
   width: 368px;
@@ -122,13 +118,8 @@ const UtilButton = styled.div`
   }
 `;
 
-export type FormType = {
-  email: string;
-  pw: string;
-};
-
 export default function Body() {
-  const formContext = useForm<FormType>();
+  const formContext = useForm<LoginForm>();
 
   const [blocked, setBlocked] = useState<boolean>(false);
 
