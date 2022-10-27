@@ -65,7 +65,7 @@ export default function Buttons() {
           <Avatar />
         </MarginWrapper>
       )}
-      {!login ? (
+      {login ? (
         <MarginWrapper>
           <AdultSwitch />
         </MarginWrapper>
