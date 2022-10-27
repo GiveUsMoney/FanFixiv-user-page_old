@@ -1,7 +1,7 @@
+import theme from '@assets/theme/theme';
 import styled from '@emotion/styled';
 import { Box } from '@mui/material';
 
-import theme from '../../../../assets/theme/theme';
 import Alarm from './Items/Alarm';
 import Empty from './Items/Empty';
 import Logout from './Items/Logout';
