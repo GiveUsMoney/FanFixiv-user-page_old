@@ -38,7 +38,7 @@ export default function Buttons() {
   useEffect(() => {
     const checkLogin = async () => {
       try {
-        console.log(await userApi.getProfile());
+        await userApi.getProfile();
         return true;
       } catch (e) {
         return false;

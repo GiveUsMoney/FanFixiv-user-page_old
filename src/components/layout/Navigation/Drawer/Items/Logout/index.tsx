@@ -3,7 +3,6 @@ import { LogoutIcon } from '@icons';
 import { SvgIcon } from '@mui/material';
 import { userApi } from '@src/apis';
 import loginState from '@src/states/login';
-import axios from 'axios';
 import { useRecoilState } from 'recoil';
 
 import Item from '..';
@@ -13,7 +12,11 @@ const Root = styled.div``;
 export default function Logout() {
   const [_, setLogin] = useRecoilState(loginState);
 
-  const handleClick = () => {
+  const handleClick = async () => {
+    const response = await userApi.logout();
+    if (!response.success) {
+      throw 'logout에 실패했습니다.';
+    }
     window.localStorage.setItem('access-token', '');
     userApi.setDefaultCommonHeader('Authorization', false);
     setLogin(false);

@@ -40,6 +40,10 @@ export interface GetProfileRequestDto {
   // userEmail: string;
 }
 
+export interface LogoutResponseDto {
+  success: boolean;
+}
+
 export interface GetProfileResponseDto {
   birth: string;
   descript: string;
