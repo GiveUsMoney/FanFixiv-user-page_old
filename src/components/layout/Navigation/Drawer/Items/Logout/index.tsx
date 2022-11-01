@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 import { LogoutIcon } from '@icons';
 import { SvgIcon } from '@mui/material';
-import { userApi } from '@src/apis';
 import loginState from '@src/states/login';
 import { useRecoilState } from 'recoil';
 

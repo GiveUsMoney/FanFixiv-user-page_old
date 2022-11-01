@@ -7,6 +7,7 @@ import loginPopupState from '@src/states/loginPopup';
 import { useEffect } from 'react';
 import { useRecoilState } from 'recoil';
 
+import ValidateLoginOnce from './action/ValidateLoginOnce';
 import AdultSwitch from './AdultSwitch';
 import Avatar from './Avatar';
 
@@ -36,18 +37,8 @@ export default function Buttons() {
   const [login, setLogin] = useRecoilState(loginState);
 
   useEffect(() => {
-    const checkLogin = async () => {
-      try {
-        await userApi.getProfile();
-        return true;
-      } catch (e) {
-        return false;
-      }
-    };
-    const validateLogin = async () => {
-      setLogin(await checkLogin());
-    };
-    validateLogin();
+    const action = new ValidateLoginOnce(setLogin);
+    action.doAction();
   }, []);
 
   return (
