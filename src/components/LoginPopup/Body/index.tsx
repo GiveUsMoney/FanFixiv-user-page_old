@@ -1,14 +1,13 @@
 import styled from '@emotion/styled';
 import { Button } from '@mui/material';
 import { SvgIcon } from '@mui/material';
-import { userApi } from '@src/apis';
 import { TwitterIcon } from '@src/assets/icons';
 import theme from '@src/assets/theme/theme';
 import BlockMessage from '@src/components/BlockMessage';
-import { useState } from 'react';
-import { FormContainer, TextFieldElement, useForm } from 'react-hook-form-mui';
+import { FormContainer, TextFieldElement } from 'react-hook-form-mui';
 
-import { LoginForm } from './interface';
+import EmailLogin from './action/EmailLogin';
+import { twitterLoginAction } from './action/TwitterLogin';
 
 const Root = styled.div`
   width: 368px;
@@ -119,29 +118,15 @@ const UtilButton = styled.div`
 `;
 
 export default function Body() {
-  const formContext = useForm<LoginForm>();
-
-  const [blocked, setBlocked] = useState<boolean>(false);
-
-  const action = async () => {
-    try {
-      const ret = await userApi.login(
-        formContext.getValues().email,
-        formContext.getValues().pw,
-      );
-      window.localStorage.setItem('access-token', ret.token);
-      setBlocked(false);
-      location.href = `${process.env.REACT_APP_PUBLIC_URL}`;
-    } catch (e: any) {
-      setBlocked(true);
-    }
-  };
+  const emailLoginAction = new EmailLogin();
 
   return (
     <Root>
       <FormContainer
-        formContext={formContext}
-        handleSubmit={formContext.handleSubmit(action)}
+        formContext={emailLoginAction.formContext}
+        handleSubmit={emailLoginAction.formContext.handleSubmit(() =>
+          emailLoginAction.doAction(),
+        )}
       >
         <Main>
           <LoginLabelWrapper>
@@ -152,7 +137,7 @@ export default function Body() {
           </IdBoxWrapper>
           <PwBoxWrapper>
             <InputBox name="pw" type="password" placeholder="pw" />
-            {blocked ? (
+            {emailLoginAction.block ? (
               <BlockMessage message="아이디 패스워드를 확인해주세요." />
             ) : (
               false
@@ -163,9 +148,7 @@ export default function Body() {
             startIcon={
               <SvgIcon viewBox="0 0 16 13" component={TwitterIconSized} />
             }
-            onClick={() => {
-              location.href = `${process.env.REACT_APP_API_BASE_URL}/auth/oauth2/authorization/twitter`;
-            }}
+            onClick={() => twitterLoginAction.doAction()}
           >
             Twitter로 로그인
           </TwitterLoginButton>
