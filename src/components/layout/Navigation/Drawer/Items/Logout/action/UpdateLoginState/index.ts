@@ -1,14 +1,14 @@
 import Action from '@src/action';
-import { useRecoilState } from 'recoil';
+import Account, { useAccount } from '@src/data-binding/model/Account';
 
 export default class UpdateLoginState extends Action {
-  setLogin: ReturnType<typeof useRecoilState<boolean>>[1];
+  accountModel: Account;
 
-  constructor(setLogin: ReturnType<typeof useRecoilState<boolean>>[1]) {
+  constructor() {
     super();
-    this.setLogin = setLogin;
+    this.accountModel = useAccount();
   }
   async doAction() {
-    this.setLogin(false);
+    this.accountModel.notify(false);
   }
 }

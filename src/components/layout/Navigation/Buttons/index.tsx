@@ -1,8 +1,7 @@
 import theme from '@assets/theme/theme';
 import styled from '@emotion/styled';
 import { Button as MuiButton } from '@mui/material';
-import { userApi } from '@src/apis';
-import loginState from '@src/states/login';
+import { useIsLogin } from '@src/data-binding/model/Account/IsLogin';
 import loginPopupState from '@src/states/loginPopup';
 import { useEffect } from 'react';
 import { useRecoilState } from 'recoil';
@@ -34,16 +33,16 @@ const MarginWrapper = styled.div`
 
 export default function Buttons() {
   const [loginPopup, setLoginPopup] = useRecoilState(loginPopupState);
-  const [login, setLogin] = useRecoilState(loginState);
+  const isLoginModel = useIsLogin();
+  const action = new ValidateLoginOnce();
 
   useEffect(() => {
-    const action = new ValidateLoginOnce(setLogin);
     action.doAction();
   }, []);
 
   return (
     <Root>
-      {!login ? (
+      {!isLoginModel.isLogin ? (
         <div>
           <Button variant="text" onClick={() => setLoginPopup(!loginPopup)}>
             Login
@@ -55,7 +54,7 @@ export default function Buttons() {
           <Avatar />
         </MarginWrapper>
       )}
-      {login ? (
+      {isLoginModel.isLogin ? (
         <MarginWrapper>
           <AdultSwitch />
         </MarginWrapper>

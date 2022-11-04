@@ -1,20 +1,16 @@
 import Action from '@src/action';
 import { userApi } from '@src/apis';
-import { useRecoilState } from 'recoil';
+import Account, { useAccount } from '@src/data-binding/model/Account';
 
 export default class ValidateLoginOnce extends Action {
-  setLogin: ReturnType<typeof useRecoilState<boolean>>[1];
+  accountModel: Account;
 
-  constructor(setLogin: ReturnType<typeof useRecoilState<boolean>>[1]) {
+  constructor() {
     super();
-    this.setLogin = setLogin;
+    this.accountModel = useAccount();
   }
+
   async doAction() {
-    try {
-      await userApi.getProfile();
-      this.setLogin(true);
-    } catch (e) {
-      this.setLogin(false);
-    }
+    this.accountModel.notify(await userApi.getProfile());
   }
 }
