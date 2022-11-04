@@ -1,14 +1,10 @@
-import { HomePage, NotFoundPage, SignUpPage } from '@src/pages';
+import { HomePage, NotFoundPage } from '@src/pages';
 import { createBrowserRouter, RouteObject } from 'react-router-dom';
 
 const routes: RouteObject[] = [
   {
     path: '/',
     element: <HomePage />,
-  },
-  {
-    path: 'signup',
-    element: <SignUpPage />,
   },
   {
     path: '*',

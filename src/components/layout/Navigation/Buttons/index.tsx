@@ -2,7 +2,9 @@ import theme from '@assets/theme/theme';
 import styled from '@emotion/styled';
 import { Button as MuiButton } from '@mui/material';
 import muiStyled from '@mui/system/styled';
+import signupPopupState from '@src/states/SignupPopup';
 import { useState } from 'react';
+import { useRecoilState } from 'recoil';
 
 import AdultSwitch from './AdultSwitch';
 import Avatar from './Avatar';
@@ -30,6 +32,7 @@ const MarginWrapper = styled.div`
 
 export default function Buttons() {
   const [isLoggedIn, setLoggedIn] = useState(false);
+  const [signupPopup, setSignupPopup] = useRecoilState(signupPopupState);
 
   return (
     <Root>
@@ -38,7 +41,9 @@ export default function Buttons() {
           <Button variant="text" onClick={() => setLoggedIn(!isLoggedIn)}>
             Login
           </Button>
-          <Button variant="text">Join</Button>
+          <Button variant="text" onClick={() => setSignupPopup(!signupPopup)}>
+            Join
+          </Button>
         </div>
       ) : (
         <MarginWrapper>
