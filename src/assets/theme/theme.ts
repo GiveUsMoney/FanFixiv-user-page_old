@@ -5,12 +5,12 @@ import {
   PaletteColorOptions,
 } from '@mui/material/styles';
 
-import { MuiCard, MuiSvgIcon } from './components';
+import { MuiSvgIcon } from './components';
 
 declare module '@mui/material/styles' {
   interface Palette {
     cta: PaletteColor;
-    main: PaletteColor;
+    primary: PaletteColor;
     secondary: PaletteColor;
     hover: PaletteColor;
     button: PaletteColor;
@@ -19,7 +19,7 @@ declare module '@mui/material/styles' {
   }
   interface PaletteOptions {
     cta?: PaletteColorOptions | undefined;
-    main?: PaletteColorOptions | undefined;
+    primary?: PaletteColorOptions | undefined;
     secondary?: PaletteColorOptions | undefined;
     hover?: PaletteColorOptions | undefined;
     button?: PaletteColorOptions | undefined;
@@ -33,7 +33,7 @@ export default createTheme({
     cta: {
       main: '#FBCECE',
     },
-    main: {
+    primary: {
       main: '#FF8484',
     },
     secondary: {
@@ -55,8 +55,5 @@ export default createTheme({
   typography: {
     fontFamily: ['MinSans', '-apple-system', 'Arial', 'sans-serif'].join(','),
   },
-  components: {
-    MuiCard,
-    MuiSvgIcon,
-  },
+  components: { MuiSvgIcon },
 });

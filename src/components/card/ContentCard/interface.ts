@@ -1,4 +1,4 @@
-import { Content } from '@src/models';
+import { Content } from '@src/apis/dtos';
 
 export interface ContentCardProps extends Content {
   disabled?: boolean;

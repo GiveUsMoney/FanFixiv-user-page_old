@@ -19,7 +19,7 @@ export default function ContentCard({
   disabled,
 }: ContentCardProps) {
   return (
-    <Card>
+    <FFContentCard>
       <CardMedia
         component="img"
         height="168"
@@ -71,9 +71,16 @@ export default function ContentCard({
           />
         ))}
       </FFCardActions>
-    </Card>
+    </FFContentCard>
   );
 }
+
+const FFContentCard = styled(Card)({
+  maxWidth: 210,
+  height: 268,
+  borderRadius: 5,
+  boxShadow: '2px 2px 10px rgba(0, 0, 0, 0.25)',
+});
 
 const FFCardContent = styled(CardContent)({
   padding: 10,
