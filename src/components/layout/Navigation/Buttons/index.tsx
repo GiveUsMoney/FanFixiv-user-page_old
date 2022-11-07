@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import { Button as MuiButton } from '@mui/material';
 import { useIsLogin } from '@src/data-binding/model/Account/IsLogin';
 import loginPopupState from '@src/states/loginPopup';
+import signupPopupState from '@src/states/SignupPopup';
 import { useEffect } from 'react';
 import { useRecoilState } from 'recoil';
 
@@ -39,6 +40,7 @@ export default function Buttons() {
   useEffect(() => {
     action.doAction();
   }, []);
+  const [signupPopup, setSignupPopup] = useRecoilState(signupPopupState);
 
   return (
     <Root>
@@ -47,7 +49,9 @@ export default function Buttons() {
           <Button variant="text" onClick={() => setLoginPopup(!loginPopup)}>
             Login
           </Button>
-          <Button variant="text">Join</Button>
+          <Button variant="text" onClick={() => setSignupPopup(!signupPopup)}>
+            Join
+          </Button>
         </div>
       ) : (
         <MarginWrapper>
