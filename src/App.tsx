@@ -6,10 +6,12 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { Navigation } from '@src/components';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import axios from 'axios';
 import { RouterProvider } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
 
 import theme from './assets/theme/theme';
+import LoginPopup from './components/LoginPopup';
 import SignupPopup from './components/SignupPopup';
 import { router } from './routes';
 
@@ -25,6 +27,7 @@ function App() {
             <CssBaseline />
             <GlobalStyles styles={appStyles} />
             <Navigation />
+            <LoginPopup />
             <RouterProvider router={router} />
             <SignupPopup />
           </ThemeProvider>

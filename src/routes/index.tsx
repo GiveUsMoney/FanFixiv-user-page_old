@@ -1,4 +1,5 @@
-import { HomePage, NotFoundPage } from '@src/pages';
+import { HomePage, NotFoundPage, SignUpPage } from '@src/pages';
+import TwitterLoginRedirectionPage from '@src/pages/twitter/login';
 import { createBrowserRouter, RouteObject } from 'react-router-dom';
 
 const routes: RouteObject[] = [
@@ -13,5 +14,5 @@ const routes: RouteObject[] = [
 ];
 
 export const router = createBrowserRouter(routes, {
-  basename: process.env.PUBLIC_URL,
+  basename: process.env.REACT_APP_PUBLIC_URL,
 });

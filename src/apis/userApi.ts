@@ -3,36 +3,79 @@ import {
   CertEmailResponseDto,
   CertNumberResponseDto,
   DcNickReponseDto,
+  GetProfileRequestDto,
+  GetProfileResponseDto,
+  LoginRequestDto,
+  LoginResponseDto,
+  LogoutResponseDto,
+  RefreshResponseDto,
   RegisterRequestDto,
   RegisterResponseDto,
 } from './dtos/user';
 
 export class UserApi extends BaseApi {
-  private readonly resource = '/auth/register';
+  private readonly authResource = '/auth';
+  private readonly registerResource = `${this.authResource}/register`;
 
   regist(registerDto: RegisterRequestDto) {
     return this.post<RegisterResponseDto, RegisterRequestDto>(
-      this.resource,
+      this.registerResource,
       registerDto,
     );
   }
 
   certEmail(email: string) {
-    return this.get<CertEmailResponseDto>(`${this.resource}/cert-email`, {
-      params: { email },
-    });
+    return this.get<CertEmailResponseDto>(
+      `${this.registerResource}/cert-email`,
+      {
+        params: { email },
+      },
+    );
   }
 
   certNumber(number: number, uuid: string) {
-    return this.get<CertNumberResponseDto>(`${this.resource}/cert-number`, {
-      params: { number, uuid },
-    });
+    return this.get<CertNumberResponseDto>(
+      `${this.registerResource}/cert-number`,
+      {
+        params: { number, uuid },
+      },
+    );
   }
 
   isNickDouble(nickname: string) {
-    return this.get<DcNickReponseDto>(`${this.resource}/dc-nick`, {
+    return this.get<DcNickReponseDto>(`${this.registerResource}/dc-nick`, {
       params: { nickname },
     });
+  }
+
+  login(email: string, pw: string) {
+    return this.post<LoginResponseDto, LoginRequestDto>(
+      `${this.authResource}/login`,
+      {
+        id: email,
+        pw,
+      },
+    );
+  }
+
+  getProfile() {
+    return this.get<GetProfileResponseDto>(`${this.authResource}/profile`, {});
+  }
+
+  refresh() {
+    return this.post<RefreshResponseDto, undefined>(
+      `${this.authResource}/refresh`,
+    );
+  }
+
+  logout() {
+    return this.post<LogoutResponseDto, undefined>(
+      `${this.authResource}/logout`,
+    );
+  }
+
+  setDefaultCommonHeader(key: string, value: any) {
+    this.axiosInstance.defaults.headers.common[key] = value;
   }
 }
 

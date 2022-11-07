@@ -2,7 +2,6 @@ import theme from '@assets/theme/theme';
 import styled from '@emotion/styled';
 import { HashIcon, SearchIcon } from '@icons';
 import { IconButton as MuiIconButton, InputBase } from '@mui/material';
-import muiStyled from '@mui/system/styled';
 
 const SearchBox = styled.div`
   width: 605px;
@@ -14,7 +13,7 @@ const SearchBox = styled.div`
   align-items: center;
 `;
 
-const SearchInput = muiStyled(InputBase)`
+const SearchInput = styled(InputBase)`
   margin-left: 18px;
   font-family: MinSans;
   font-size: 16px;
@@ -34,7 +33,7 @@ const Button = styled.img`
   height: 24px;
 `;
 
-const IconButton = muiStyled(MuiIconButton)`
+const IconButton = styled(MuiIconButton)`
   width: 24px;
   height: 24px;
   margin-left: 8px;

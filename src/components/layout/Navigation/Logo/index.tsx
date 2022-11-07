@@ -1,8 +1,8 @@
 import theme from '@assets/theme/theme';
+import styled from '@emotion/styled';
 import { Button } from '@mui/material';
-import muiStyled from '@mui/system/styled';
 
-const LogoButton = muiStyled(Button)`
+const LogoButton = styled(Button)`
   font-family: Impact;
   color: ${theme.palette.button.main};
   font-size: 22px;
