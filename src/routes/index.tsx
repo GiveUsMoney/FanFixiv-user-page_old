@@ -12,7 +12,7 @@ const routes: RouteObject[] = [
     element: <NotFoundPage />,
   },
   {
-    path: '/login',
+    path: '/twitter/login',
     element: <TwitterLoginRedirectionPage />,
   },
 ];
