@@ -3,9 +3,7 @@ import { SvgIcon } from '@mui/material';
 import { ExclamationIcon } from '@src/assets/icons';
 import theme from '@src/assets/theme/theme';
 
-export type PropsType = {
-  message: string;
-};
+import { BlockMessageProps } from './interface';
 
 const Root = styled.div`
   display: flex;
@@ -30,7 +28,7 @@ const TextMessage = styled.div`
   margin-left: 4px;
 `;
 
-export default function BlockMessage(props: PropsType) {
+export default function BlockMessage(props: BlockMessageProps) {
   return (
     <Root>
       <IconWrapper>

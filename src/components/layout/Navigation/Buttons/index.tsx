@@ -1,12 +1,13 @@
 import theme from '@assets/theme/theme';
 import styled from '@emotion/styled';
 import { Button as MuiButton } from '@mui/material';
-import { userApi } from '@src/apis';
-import loginState from '@src/states/login';
+import { useIsLogin } from '@src/data-binding/model/Account/IsLogin';
 import loginPopupState from '@src/states/loginPopup';
+import signupPopupState from '@src/states/SignupPopup';
 import { useEffect } from 'react';
 import { useRecoilState } from 'recoil';
 
+import ValidateLoginOnce from './action/ValidateLoginOnce';
 import AdultSwitch from './AdultSwitch';
 import ProfileAvatar from './ProfileAvatar';
 
@@ -33,38 +34,31 @@ const MarginWrapper = styled.div`
 
 export default function Buttons() {
   const [loginPopup, setLoginPopup] = useRecoilState(loginPopupState);
-  const [login, setLogin] = useRecoilState(loginState);
+  const isLoginModel = useIsLogin();
+  const action = new ValidateLoginOnce();
 
   useEffect(() => {
-    const checkLogin = async () => {
-      try {
-        console.log(await userApi.getProfile());
-        return true;
-      } catch (e) {
-        return false;
-      }
-    };
-    const validateLogin = async () => {
-      setLogin(await checkLogin());
-    };
-    validateLogin();
+    action.doAction();
   }, []);
+  const [signupPopup, setSignupPopup] = useRecoilState(signupPopupState);
 
   return (
     <Root>
-      {!login ? (
+      {!isLoginModel.isLogin ? (
         <div>
           <Button variant="text" onClick={() => setLoginPopup(!loginPopup)}>
             Login
           </Button>
-          <Button variant="text">Join</Button>
+          <Button variant="text" onClick={() => setSignupPopup(!signupPopup)}>
+            Join
+          </Button>
         </div>
       ) : (
         <MarginWrapper>
           <ProfileAvatar />
         </MarginWrapper>
       )}
-      {login ? (
+      {isLoginModel.isLogin ? (
         <MarginWrapper>
           <AdultSwitch />
         </MarginWrapper>

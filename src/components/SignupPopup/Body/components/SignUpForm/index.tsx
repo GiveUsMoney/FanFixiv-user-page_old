@@ -66,6 +66,7 @@ export default function SignUpForm() {
         uuid,
       };
       await userApi.regist(formData);
+      location.href = process.env.REACT_APP_PUBLIC_URL!;
       // regist success
     } catch (error) {
       // TODO: 4xx, 5xx

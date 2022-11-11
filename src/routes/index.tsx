@@ -8,14 +8,6 @@ const routes: RouteObject[] = [
     element: <HomePage />,
   },
   {
-    path: 'signup',
-    element: <SignUpPage />,
-  },
-  {
-    path: 'twitter/login',
-    element: <TwitterLoginRedirectionPage />,
-  },
-  {
     path: '*',
     element: <NotFoundPage />,
   },

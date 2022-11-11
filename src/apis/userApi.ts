@@ -7,6 +7,7 @@ import {
   GetProfileResponseDto,
   LoginRequestDto,
   LoginResponseDto,
+  LogoutResponseDto,
   RefreshResponseDto,
   RegisterRequestDto,
   RegisterResponseDto,
@@ -64,6 +65,12 @@ export class UserApi extends BaseApi {
   refresh() {
     return this.post<RefreshResponseDto, undefined>(
       `${this.authResource}/refresh`,
+    );
+  }
+
+  logout() {
+    return this.post<LogoutResponseDto, undefined>(
+      `${this.authResource}/logout`,
     );
   }
 

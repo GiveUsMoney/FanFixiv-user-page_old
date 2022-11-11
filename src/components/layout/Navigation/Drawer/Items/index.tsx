@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
-import React from 'react';
+
+import { ItemsProps } from './interface';
 
 const Root = styled.div`
   width: 100%;
@@ -21,12 +22,7 @@ const TextWrapper = styled.div`
   margin-left: 8px;
 `;
 
-export type PropsType = {
-  icon: React.ReactElement;
-  text: string;
-};
-
-export default function Item(props: PropsType) {
+export default function Item(props: ItemsProps) {
   return (
     <Root>
       <IconWrapper>{props.icon}</IconWrapper>
