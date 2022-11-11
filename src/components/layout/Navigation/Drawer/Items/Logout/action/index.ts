@@ -6,7 +6,7 @@ import GotoHome from './GotoHome';
 import RequestServerLogout from './RequestServerLogout';
 import UpdateLoginState from './UpdateLoginState';
 
-export default class Action extends ContainerAction {
+export default class Action extends ContainerAction<void> {
   constructor() {
     super({
       actions: [

@@ -125,7 +125,7 @@ export default function Body() {
       <FormContainer
         formContext={emailLoginAction.formContext}
         handleSubmit={emailLoginAction.formContext.handleSubmit(() =>
-          emailLoginAction.doAction(),
+          emailLoginAction.login(),
         )}
       >
         <Main>
@@ -138,7 +138,7 @@ export default function Body() {
           <PwBoxWrapper>
             <InputBox name="pw" type="password" placeholder="pw" />
             {emailLoginAction.block ? (
-              <BlockMessage message="아이디 패스워드를 확인해주세요." />
+              <BlockMessage message={emailLoginAction.errorMessage} />
             ) : (
               false
             )}
