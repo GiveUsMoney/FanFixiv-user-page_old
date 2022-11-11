@@ -1,5 +1,4 @@
-import { HomePage, NotFoundPage, SignUpPage } from '@src/pages';
-import TwitterLoginRedirectionPage from '@src/pages/twitter/login';
+import { HomePage, NotFoundPage } from '@src/pages';
 import { createBrowserRouter, RouteObject } from 'react-router-dom';
 
 const routes: RouteObject[] = [
