@@ -9,7 +9,7 @@ import { useRecoilState } from 'recoil';
 
 import ValidateLoginOnce from './action/ValidateLoginOnce';
 import AdultSwitch from './AdultSwitch';
-import Avatar from './Avatar';
+import ProfileAvatar from './ProfileAvatar';
 
 const Root = styled.div`
   font-weight: bold;
@@ -55,7 +55,7 @@ export default function Buttons() {
         </div>
       ) : (
         <MarginWrapper>
-          <Avatar />
+          <ProfileAvatar />
         </MarginWrapper>
       )}
       {isLoginModel.isLogin ? (

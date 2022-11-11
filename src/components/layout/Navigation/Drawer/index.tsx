@@ -21,6 +21,7 @@ const Root = styled(Box)`
   position: absolute;
   right: calc(100% / 6);
   z-index: 200;
+  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 10%);
 `;
 
 export default function Drawer() {
