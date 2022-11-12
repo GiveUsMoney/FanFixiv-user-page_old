@@ -24,8 +24,8 @@ const SignUpPageBox = styled(Box)(
     margin: 0 auto;
     padding: 24px 48px;
     width: 520px;
-    border: 2px solid ${theme.palette.cta.main};
-    border-radius: 10px;
+    // border: 2px solid ${theme.palette.cta.main};
+    // border-radius: 10px;
   `,
 );
 
