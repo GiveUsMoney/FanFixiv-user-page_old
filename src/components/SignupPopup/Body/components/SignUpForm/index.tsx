@@ -10,6 +10,7 @@ import { css, styled } from '@mui/material/styles';
 import { DesktopDatePicker } from '@mui/x-date-pickers';
 import { userApi } from '@src/apis';
 import { RegisterRequestDto } from '@src/apis/dtos';
+import { CameraCreate } from '@src/assets/icons';
 import { Dayjs } from 'dayjs';
 import { useState } from 'react';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
@@ -189,6 +190,15 @@ export default function SignUpForm() {
 
         <SignUpSecondFormWrapper>
           <SignUpFormControl>
+            <SignUpFormLabel variant="h4">프로필 이미지</SignUpFormLabel>
+            <ProfileImageButtonWrapper>
+              <ProfileImageButton>
+                <ProfileImage />
+                <CameraCreateIcon viewBox="0 0 48 48" />
+              </ProfileImageButton>
+            </ProfileImageButtonWrapper>
+          </SignUpFormControl>
+          <SignUpFormControl>
             <SignUpFormLabel variant="h4">닉네임</SignUpFormLabel>
             <SingUpFormTextField
               {...register('nickname', {
@@ -250,16 +260,6 @@ const Root = styled('div')`
   position: relative;
 `;
 
-const SignUpFormWrapper = styled('form')`
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  margin-top: 60px;
-  width: 100%;
-  flex-wrap: nowrap;
-  position: relative;
-`;
-
 const SignUpFirstFormWrapper = styled('div')`
   width: 100%;
   flex-shrink: 0;
@@ -300,6 +300,41 @@ const SingUpFormTextField = styled(TextField)(
     }
   `,
 );
+
+const ProfileImageButtonWrapper = styled('div')`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const ProfileImageButton = styled('div')`
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  position: relative;
+  cursor: pointer;
+`;
+
+const ProfileImage = styled('div')(
+  ({ theme }) => `
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: ${theme.palette.gray2.main};
+    position: absolute;
+    left: 0;
+    top: 0;
+  `,
+);
+
+const CameraCreateIcon = styled(CameraCreate)`
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 48px;
+  height: 48px;
+`;
 
 const SignUpFormButton = styled(Button)(
   ({ theme }) => `
