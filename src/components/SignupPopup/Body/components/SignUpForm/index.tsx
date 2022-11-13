@@ -11,6 +11,7 @@ import { DesktopDatePicker } from '@mui/x-date-pickers';
 import { userApi } from '@src/apis';
 import { RegisterRequestDto } from '@src/apis/dtos';
 import { CameraCreate } from '@src/assets/icons';
+import theme from '@src/assets/theme/theme';
 import { Dayjs } from 'dayjs';
 import { useState } from 'react';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
@@ -23,18 +24,6 @@ export default function SignUpForm() {
   const [uuid, setUuid] = useState('');
   const [section, setSection] = useState(0);
 
-  const formCss = css`
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    margin-top: 60px;
-    width: 100%;
-    flex-wrap: nowrap;
-    position: relative;
-    transform: ${section === 1 ? 'translateX(calc(-100% - 144px))' : '0'};
-    transition-duration: 0.5s;
-  `;
-
   const {
     register,
     handleSubmit,
@@ -43,6 +32,8 @@ export default function SignUpForm() {
     getValues,
     formState: { errors },
   } = useForm({ mode: 'onBlur' });
+
+  console.log(errors);
 
   const onDateChange = async (newValue: Dayjs | null) => {
     setBirthday(newValue);
@@ -86,6 +77,51 @@ export default function SignUpForm() {
       // TODO: 4xx, 5xx
     }
   };
+  const checkNextValid = () => {
+    return (
+      errors.email === undefined &&
+      errors.emailConfirm === undefined &&
+      errors.password === undefined &&
+      errors.passwordConfirm === undefined &&
+      getValues().email &&
+      getValues().emailConfirm &&
+      getValues().password &&
+      getValues().passwordConfirm
+    );
+  };
+
+  const formCss = css`
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-top: 60px;
+    width: 100%;
+    flex-wrap: nowrap;
+    position: relative;
+    transform: ${section === 1 ? 'translateX(calc(-100% - 144px))' : '0'};
+    transition-duration: 0.5s;
+  `;
+  const nextButtonCss = css`
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+    height: 40px;
+    color: white;
+    background-color: ${checkNextValid()
+      ? theme.palette.secondary.main
+      : theme.palette.gray2.main};
+    border-radius: 10px;
+
+    &:hover {
+      color: ${checkNextValid() ? theme.palette.primary.main : 'none'};
+      border: ${checkNextValid()
+        ? `1px solid ${theme.palette.primary.main}`
+        : 'none'};
+      background-color: ${checkNextValid()
+        ? theme.palette.primary.main
+        : theme.palette.gray2.main};
+    }
+  `;
 
   return (
     <Root>
@@ -185,7 +221,16 @@ export default function SignUpForm() {
             />
           </SignUpFormControl>
 
-          <NextButton onClick={() => setSection(1)}>다음</NextButton>
+          <Button
+            css={nextButtonCss}
+            onClick={() => {
+              if (checkNextValid()) {
+                setSection(1);
+              }
+            }}
+          >
+            다음
+          </Button>
         </SignUpFirstFormWrapper>
 
         <SignUpSecondFormWrapper>
