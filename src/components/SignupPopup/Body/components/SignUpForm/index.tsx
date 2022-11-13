@@ -12,8 +12,9 @@ import { userApi } from '@src/apis';
 import { RegisterRequestDto } from '@src/apis/dtos';
 import { CameraCreate } from '@src/assets/icons';
 import theme from '@src/assets/theme/theme';
+import { useProfileImageCrop } from '@src/data-binding/model/ProfileImageCrop';
 import { Dayjs } from 'dayjs';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 
 export default function SignUpForm() {
@@ -23,6 +24,8 @@ export default function SignUpForm() {
   const [nicknameAlert, setNicknameAlert] = useState(false);
   const [uuid, setUuid] = useState('');
   const [section, setSection] = useState(0);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const profileImageCrop = useProfileImageCrop();
 
   const {
     register,
@@ -69,6 +72,7 @@ export default function SignUpForm() {
         nickname: fieldValues.nickname,
         pw: fieldValues.password,
         uuid,
+        profileImg: profileImageCrop.croppedSrc,
       };
       await userApi.regist(formData);
       location.href = process.env.REACT_APP_PUBLIC_URL!;
@@ -237,10 +241,32 @@ export default function SignUpForm() {
           <SignUpFormControl>
             <SignUpFormLabel variant="h4">프로필 이미지</SignUpFormLabel>
             <ProfileImageButtonWrapper>
-              <ProfileImageButton>
-                <ProfileImage />
+              <ProfileImageButton
+                onClick={() => {
+                  fileInputRef.current!.click();
+                }}
+              >
+                {profileImageCrop.croppedSrc !== '' ? (
+                  <ProfileImage src={profileImageCrop.croppedSrc} />
+                ) : (
+                  <EmptyProfileImage />
+                )}
                 <CameraCreateIcon viewBox="0 0 48 48" />
               </ProfileImageButton>
+              <input
+                type="file"
+                ref={fileInputRef}
+                hidden
+                onChange={(e) => {
+                  if (e.currentTarget.files === null) return;
+                  const reader = new FileReader();
+                  reader.addEventListener('load', () => {
+                    profileImageCrop.startCrop(reader.result as string);
+                    fileInputRef.current!.value = '';
+                  });
+                  reader.readAsDataURL(e.currentTarget.files[0]);
+                }}
+              />
             </ProfileImageButtonWrapper>
           </SignUpFormControl>
           <SignUpFormControl>
@@ -361,7 +387,19 @@ const ProfileImageButton = styled('div')`
   cursor: pointer;
 `;
 
-const ProfileImage = styled('div')(
+const EmptyProfileImage = styled('div')(
+  ({ theme }) => `
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: ${theme.palette.gray2.main};
+    position: absolute;
+    left: 0;
+    top: 0;
+  `,
+);
+
+const ProfileImage = styled('img')(
   ({ theme }) => `
     width: 100%;
     height: 100%;

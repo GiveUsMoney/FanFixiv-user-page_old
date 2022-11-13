@@ -3,6 +3,7 @@ export interface RegisterRequestDto {
   nickname: string;
   pw: string;
   uuid: string;
+  profileImg: string;
 }
 
 export interface RegisterResponseDto {
