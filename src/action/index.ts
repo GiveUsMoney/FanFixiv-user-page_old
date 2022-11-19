@@ -1,3 +1,3 @@
-export default abstract class Action {
-  public abstract doAction(): Promise<void>;
+export default abstract class Action<EventType> {
+  public abstract doAction(payload: EventType): Promise<void>;
 }

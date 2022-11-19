@@ -1,20 +1,20 @@
 import Action from '..';
 
-export type ConstructorParam = {
-  actions: Action[];
+export type ConstructorParam<EventType> = {
+  actions: Action<EventType>[];
 };
 
-export default class ContainerAction extends Action {
-  actions: Action[];
+export default class ContainerAction<EventType> extends Action<EventType> {
+  actions: Action<EventType>[];
 
-  constructor(payload: ConstructorParam) {
+  constructor(payload: ConstructorParam<EventType>) {
     super();
     this.actions = payload.actions;
   }
 
-  async doAction() {
+  async doAction(payload: EventType) {
     for (let action of this.actions) {
-      await action.doAction();
+      await action.doAction(payload);
     }
   }
 }

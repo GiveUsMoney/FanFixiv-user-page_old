@@ -1,7 +1,7 @@
 import Action from '@src/action';
 import { userApi } from '@src/apis';
 
-export default class RequestServerLogout extends Action {
+export default class RequestServerLogout extends Action<void> {
   async doAction() {
     console.log(window.localStorage);
     const response = await userApi.logout();
