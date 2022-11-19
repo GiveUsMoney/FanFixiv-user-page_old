@@ -33,7 +33,12 @@ export default function Body() {
           const cropper: CropperType = (cropperRef.current! as any).cropper;
           cropper.getCroppedCanvas().toBlob(async (blob) => {
             const form = new FormData();
-            form.append('images', blob!);
+            form.append(
+              'images',
+              new File([blob!], 'temp.png', {
+                type: 'image/png',
+              }),
+            );
             const res = await uploadApi.profileImgTemp(form);
             model.endCrop(res.location);
           });
