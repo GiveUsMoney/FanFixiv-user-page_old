@@ -52,7 +52,7 @@ export class UserApi extends BaseApi {
     return this.post<LoginResponseDto, LoginRequestDto>(
       `${this.authResource}/login`,
       {
-        id: email,
+        email,
         pw,
       },
     );

@@ -1,6 +1,6 @@
 import Action from '@src/action';
 
-export default class TwitterLogin extends Action {
+export default class TwitterLogin extends Action<void> {
   async doAction() {
     location.href = `${process.env.REACT_APP_API_BASE_URL}/auth/oauth2/authorization/twitter`;
   }

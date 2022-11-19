@@ -23,7 +23,7 @@ export interface DcNickReponseDto {
 }
 
 export interface LoginRequestDto {
-  id: string;
+  email: string;
   pw: string;
 }
 
