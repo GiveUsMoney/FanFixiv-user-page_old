@@ -1,10 +1,13 @@
 {
   "files": {
-    "main.js": "/FanFixiv-user-page/static/js/main.575f8617.js",
+    "main.css": "/FanFixiv-user-page/static/css/main.7432b496.css",
+    "main.js": "/FanFixiv-user-page/static/js/main.869b61d9.js",
     "index.html": "/FanFixiv-user-page/index.html",
-    "main.575f8617.js.map": "/FanFixiv-user-page/static/js/main.575f8617.js.map"
+    "main.7432b496.css.map": "/FanFixiv-user-page/static/css/main.7432b496.css.map",
+    "main.869b61d9.js.map": "/FanFixiv-user-page/static/js/main.869b61d9.js.map"
   },
   "entrypoints": [
-    "static/js/main.575f8617.js"
+    "static/css/main.7432b496.css",
+    "static/js/main.869b61d9.js"
   ]
 }
