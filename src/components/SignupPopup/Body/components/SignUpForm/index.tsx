@@ -49,7 +49,11 @@ export default function SignUpForm() {
   };
   const onCertNumber = async () => {
     try {
-      await userApi.certNumber(getValues('emailConfirm'), uuid);
+      if (
+        !(await userApi.certNumber(getValues('emailConfirm'), uuid)).success
+      ) {
+        throw 'success: false';
+      }
       setEmailConfirmAlert(true);
     } catch (error) {
       return '유효하지 않은 인증번호입니다.';
@@ -118,12 +122,10 @@ export default function SignUpForm() {
 
     &:hover {
       color: ${checkNextValid() ? theme.palette.primary.main : 'none'};
+      background-color: ${checkNextValid() ? 'none' : theme.palette.gray2.main};
       border: ${checkNextValid()
         ? `1px solid ${theme.palette.primary.main}`
         : 'none'};
-      background-color: ${checkNextValid()
-        ? theme.palette.primary.main
-        : theme.palette.gray2.main};
     }
   `;
 
@@ -175,7 +177,11 @@ export default function SignUpForm() {
               variant="outlined"
               size="small"
             />
-            <SignUpFormButton onClick={() => trigger(['emailConfirm'])}>
+            <SignUpFormButton
+              onClick={() => {
+                trigger(['emailConfirm']);
+              }}
+            >
               확인
             </SignUpFormButton>
             <Grow in={emailConfirmAlert}>
