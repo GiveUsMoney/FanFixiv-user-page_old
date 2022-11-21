@@ -255,7 +255,7 @@ export default function SignUpForm() {
                 {profileImageCrop.croppedSrc !== '' ? (
                   <ProfileImage src={profileImageCrop.croppedSrc} />
                 ) : (
-                  <EmptyProfileImage />
+                  <EmptyProfileImage src="https://fanfixiv.s3.ap-northeast-2.amazonaws.com/profile/origin/profile-img.png" />
                 )}
                 <CameraCreateIcon viewBox="0 0 48 48" />
               </ProfileImageButton>
@@ -393,7 +393,7 @@ const ProfileImageButton = styled('div')`
   cursor: pointer;
 `;
 
-const EmptyProfileImage = styled('div')(
+const EmptyProfileImage = styled('img')(
   ({ theme }) => `
     width: 100%;
     height: 100%;
