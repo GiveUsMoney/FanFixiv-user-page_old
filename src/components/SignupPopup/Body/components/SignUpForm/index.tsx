@@ -457,23 +457,6 @@ const SignUpButton = styled(Button)(
   `,
 );
 
-const NextButton = styled(Button)(
-  ({ theme }) => `
-    display: block;
-    margin-top: 10px;
-    width: 100%;
-    height: 40px;
-    color: white;
-    background-color: ${theme.palette.secondary.main};
-    border-radius: 10px;
-    
-    &:hover {
-      color: ${theme.palette.primary.main};
-      border: 1px solid ${theme.palette.primary.main};
-    }
-  `,
-);
-
 const SignUpAlert = styled(Alert)`
   width: '100%';
   flex-grow: 1;
