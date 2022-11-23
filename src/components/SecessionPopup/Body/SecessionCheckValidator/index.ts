@@ -6,7 +6,7 @@ export default class SecessionCheckValidator {
   protected setValid: React.Dispatch<React.SetStateAction<boolean>>;
 
   constructor() {
-    [this.valid, this.setValid] = useState(false);
+    [this.valid, this.setValid] = useState(true);
   }
 
   validate(secessionCheck: string) {

@@ -24,10 +24,12 @@ export default function Body() {
       <SecessionCheckInput
         onChange={(e) => {
           secessionCheckModel.handleChange(e);
-          secessionCheckValidator.validate(e.target.value);
+        }}
+        onBlur={() => {
+          secessionCheckValidator.validate(secessionCheckModel.check);
         }}
       />
-      {secessionCheckModel.check && !secessionCheckValidator.valid && (
+      {!secessionCheckValidator.valid && (
         <ErrorMessage>&quot;탈퇴&quot;을 입력해 주세요</ErrorMessage>
       )}
       <PasswordLabel>비밀번호 입력</PasswordLabel>
