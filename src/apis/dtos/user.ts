@@ -53,3 +53,7 @@ export interface GetProfileResponseDto {
   profileImg: string;
   tr: boolean;
 }
+
+export interface SecessionRequestDto {
+  pw: string;
+}
