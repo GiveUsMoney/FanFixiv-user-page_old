@@ -13,6 +13,7 @@ import { RecoilRoot } from 'recoil';
 import theme from './assets/theme/theme';
 import LoginPopup from './components/LoginPopup';
 import ProfileImageCropPopup from './components/ProfileImageCropPopup';
+import SecessionPopup from './components/SecessionPopup';
 import SignupPopup from './components/SignupPopup';
 import { router } from './routes';
 
@@ -32,6 +33,7 @@ function App() {
             <RouterProvider router={router} />
             <SignupPopup />
             <ProfileImageCropPopup />
+            <SecessionPopup />
           </ThemeProvider>
         </LocalizationProvider>
       </QueryClientProvider>

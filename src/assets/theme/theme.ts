@@ -10,6 +10,7 @@ import { MuiSvgIcon } from './components';
 declare module '@mui/material/styles' {
   interface Palette {
     cta: PaletteColor;
+    tMain: PaletteColor;
     primary: PaletteColor;
     secondary: PaletteColor;
     hover: PaletteColor;
@@ -19,6 +20,7 @@ declare module '@mui/material/styles' {
   }
   interface PaletteOptions {
     cta?: PaletteColorOptions | undefined;
+    tMain?: PaletteColorOptions | undefined;
     primary?: PaletteColorOptions | undefined;
     secondary?: PaletteColorOptions | undefined;
     hover?: PaletteColorOptions | undefined;
@@ -32,6 +34,9 @@ export default createTheme({
   palette: {
     cta: {
       main: '#FBCECE',
+    },
+    tMain: {
+      main: '#FF8484',
     },
     primary: {
       main: '#FF8484',

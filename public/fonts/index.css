@@ -20,6 +20,16 @@
 
 @font-face {
   font-family: 'MinSans';
+  font-weight: bold;
+  font-display: swap;
+  src: local('MinSans-Bold'),
+  url('/fonts/MinSans-Bold.woff2') format('woff2'),
+  url('/fonts/MinSans-Bold.woff') format('woff'),
+  url('/fonts/MinSans-Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'MinSans';
   font-weight: 500;
   font-display: swap;
   src: local('MinSans-Medium'),
@@ -31,6 +41,16 @@
 @font-face {
   font-family: 'MinSans';
   font-weight: 400;
+  font-display: swap;
+  src: local('MinSans-Regular'),
+  url('/fonts/MinSans-Regular.woff2') format('woff2'),
+  url('/fonts/MinSans-Regular.woff') format('woff'),
+  url('/fonts/MinSans-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'MinSans';
+  font-weight: 'normal';
   font-display: swap;
   src: local('MinSans-Regular'),
   url('/fonts/MinSans-Regular.woff2') format('woff2'),
