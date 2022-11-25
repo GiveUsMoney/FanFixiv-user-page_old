@@ -11,6 +11,7 @@ import {
   RefreshResponseDto,
   RegisterRequestDto,
   RegisterResponseDto,
+  SecessionRequestDto,
 } from './dtos/user';
 
 export class UserApi extends BaseApi {
@@ -71,6 +72,15 @@ export class UserApi extends BaseApi {
   logout() {
     return this.post<LogoutResponseDto, undefined>(
       `${this.authResource}/logout`,
+    );
+  }
+
+  secession(pw: string) {
+    return this.post<undefined, SecessionRequestDto>(
+      `${this.authResource}/secession`,
+      {
+        pw,
+      },
     );
   }
 
