@@ -8,9 +8,9 @@ import Body from './Body';
 const Root = styled(Dialog)`
   & .MuiPaper-root {
     border-radius: 10px;
-    border-color: ${theme.palette.cta.main};
-    border-width: 2px;
-    border-style: solid;
+    ::-webkit-scrollbar {
+      width: 0px;
+    }
   }
 `;
 

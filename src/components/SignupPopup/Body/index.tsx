@@ -15,17 +15,17 @@ export default function SignUpPage() {
 }
 
 const SignUpPageContainer = styled(Container)`
-  margin-top: 48px;
-  margin-bottom: 48px;
+  margin-top: 24px;
+  margin-bottom: 24px;
 `;
 
 const SignUpPageBox = styled(Box)(
   ({ theme }) => `
     margin: 0 auto;
-    padding: 24px 48px;
+    padding: 12px 24px;
     width: 520px;
-    border: 2px solid ${theme.palette.cta.main};
-    border-radius: 10px;
+    // border: 2px solid ${theme.palette.cta.main};
+    // border-radius: 10px;
   `,
 );
 

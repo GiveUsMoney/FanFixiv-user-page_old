@@ -1,4 +1,5 @@
 export { default as BellIcon } from './BellIcon';
+export { default as CameraCreate } from './CameraCreate';
 export { default as ChevronBottomIcon } from './ChevronBottomIcon';
 export { default as ChevronDownIcon } from './ChevronDownIcon';
 export { default as ChevronRightIcon } from './ChevronRightIcon';
