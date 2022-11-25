@@ -5,6 +5,7 @@ import Alarm from './Items/Alarm';
 import Empty from './Items/Empty';
 import Logout from './Items/Logout';
 import MyLike from './Items/MyLike';
+import MyPage from './Items/MyPage';
 import ProfileEdit from './Items/ProfileEdit';
 import Settings from './Items/Settings';
 import TagList from './Items/TagList';
@@ -27,6 +28,7 @@ export default function Drawer() {
       <TagList />
       <Translate />
       <MyLike />
+      <MyPage />
       <Empty />
       <Settings />
       <Logout />

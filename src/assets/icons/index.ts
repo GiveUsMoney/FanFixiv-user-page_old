@@ -15,3 +15,4 @@ export { default as SearchIcon } from './SearchIcon';
 export { default as SettingsIcon } from './SettingsIcon';
 export { default as TranslateIcon } from './TranslateIcon';
 export { default as TwitterIcon } from './TwitterIcon';
+export { default as UploadIcon } from './Upload';

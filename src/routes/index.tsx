@@ -1,4 +1,5 @@
 import { HomePage, NotFoundPage } from '@src/pages';
+import RegistPost from '@src/pages/regist-post';
 import TwitterLoginRedirectionPage from '@src/pages/twitter/login';
 import { createBrowserRouter, RouteObject } from 'react-router-dom';
 
@@ -14,6 +15,10 @@ const routes: RouteObject[] = [
   {
     path: '/twitter/login',
     element: <TwitterLoginRedirectionPage />,
+  },
+  {
+    path: '/regist-post',
+    element: <RegistPost />,
   },
 ];
 

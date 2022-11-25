@@ -10,6 +10,7 @@ import ProfileEdit from './Items/ProfileEdit';
 import Settings from './Items/Settings';
 import TagList from './Items/TagList';
 import Translate from './Items/Translate';
+import Upload from './Items/Upload';
 
 const Root = styled(Box)`
   width: 165px;
@@ -32,6 +33,7 @@ export default function Drawer() {
       <TagList />
       <Translate />
       <MyLike />
+      <Upload />
       <Empty />
       <Settings />
       <Logout />
