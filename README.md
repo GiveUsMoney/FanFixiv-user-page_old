@@ -1,6 +1,6 @@
 # FanFixiv User Page
 
-> 팬 픽시브 웹 페이지
+> 현재 더이상 개발이 진행되지 않습니다.
 
 ## Install
 
